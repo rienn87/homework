@@ -4,21 +4,21 @@ class Rectangle:
         self.width = width
     
     def area(self):
-        area =  self.height * self.width
-        return area
+        return (self.height * self.width)
     
     def perimeter(self):
-        perimeter = 2 * self.height + self.width
-        return perimeter
+        return 2*(self.height + self.width)
     
     def is_square(self):
-        if self.height == self.width:
-            return 'Это не квадрат'
-        return 'Это квадрат'
+        return True if (self.height == self.width) else False 
     
     def rotate(self):
+        temp = self.width
         self.width = self.height
-        self.height = self.width
+        self.height = temp
     
-    
-    
+
+a = Rectangle(11, 10)
+print(f"это квадрат? - {a.is_square()}")
+print(f"площадь: {a.area()}")
+print(f"периметр: {a.perimeter()}")
